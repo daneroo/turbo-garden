@@ -1,0 +1,71 @@
+# Welcome to the Garden
+
+import { Callout } from "nextra-theme-docs";
+
+Hello, world!
+
+<Callout type="info" emoji="ℹ️">
+  This is a callout.
+</Callout>
+
+## Code
+
+```js
+console.log("hello, garden");
+```
+
+## Components
+
+### Button from `ui`
+
+import { Button } from "ui";
+
+<Button />
+
+<Callout type="warning" emoji="⚠️">
+  Cannot seem to useState inside my shared component in ui
+</Callout>
+
+### Local Counter in this `.mdx`
+
+import { useState } from "react";
+
+export function LocalCounter({ children }) {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {children}
+      {count}
+    </button>
+  );
+}
+
+<LocalCounter>**Local Counter Clicks**: </LocalCounter>
+
+### Counter Button from `../components/CounterButton`
+
+import { CounterButton } from "../components/CounterButton";
+
+<CounterButton />
+
+## Markdown Tables
+
+| left   | center | right |
+| :----- | :----: | ----: |
+| foo    |  bar   |   baz |
+| banana | apple  |  kiwi |
+
+## Image
+
+import Image from "next/image";
+
+<Image
+  src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Pythagorean.svg"
+  alt="Pythagorean Theorem"
+  width={200}
+  height={200}
+/>
+
+## Math
+
+The **Pythagorean equation**: $c=\sqrt{a^2 + b^2}$.

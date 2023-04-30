@@ -5,8 +5,11 @@ This is an official starter Turborepo.
 ## Requirements/TODO
 
 - [x] a nextjs site
-  - [ ] to test things like libraries
-- [ ] a nextra site for docs <-- FAILED
+  - [x] with a shared component library
+- [ ] a nextra site for docs
+  - [x] `pnpm i nextra nextra-theme-docs`
+  - [x] with a shared component library
+  - [ ] with a shared component library - with state
 - [ ] I want tailwindcss
 - [ ] I want a deno cli app
 - [ ] I want to dockerize the two sites
@@ -19,15 +22,10 @@ This is an official starter Turborepo.
 ## Usage
 
 - `pnpm dev`
+  - `pnpm dev --filter docs`
 - `pnpm test`
 - `pnpm lint`
 - format: check, write ?
-
-And when we have site and docs:
-
-- Dev: `nx serve site-garden`
-- Test: `nx test site-garden` to execute the unit tests via [Jest](https://jestjs.io).
-- E2E: `nx e2e site-garden-e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 ## Setup
 
@@ -48,33 +46,3 @@ As generated this Turborepo includes the following packages/apps:
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
