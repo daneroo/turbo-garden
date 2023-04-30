@@ -4,20 +4,16 @@ This is an official starter Turborepo.
 
 ## Requirements/TODO
 
-- [x] a nextjs site
-  - [x] with a shared component library
-- [ ] a nextra site for docs
-  - [x] `pnpm i nextra nextra-theme-docs`
-  - [x] with a shared component library
-  - [ ] with a shared component library - with state
-- [ ] I want tailwindcss
-- [ ] I want a deno cli app
-- [ ] I want to dockerize the two sites
-- [ ] I want e2e - cypress &| storybook
-  - [ ] with actual tests
-- [ ] I want to deploy to vercel (2 sites)
-- [ ] I want to deploy to netlify (2 sites)
-- [ ] `npx turbo link`: for [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [ ] [Tailwindcss](https://tailwindcss.com/docs/guides/nextjs)
+- [ ] CI/CD
+  - [ ] Github Actions (lint, test build, docker)
+  - [ ] e2e - cypress &| storybook &| [playwright](https://www.youtube.com/watch?v=bsE1VJn1HeU)
+  - [ ] Dockerize the two sites (using `turbo prune`, with-docker example)
+  - [ ] Deploy to netlify (2 sites)
+  - [ ] `npx turbo link`: for [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- Alternate runtimes
+  - [ ] deno cli app
+  - [ ] go cli app
 
 ## Usage
 

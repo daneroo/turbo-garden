@@ -1,71 +1,82 @@
 # Welcome to the Garden
 
 import { Callout } from "nextra-theme-docs";
-
-Hello, world!
-
-<Callout type="info" emoji="ℹ️">
-  This is a callout.
-</Callout>
-
-## Code
-
-```js
-console.log("hello, garden");
-```
-
-## Components
-
-### Button from `ui`
-
-import { Button } from "ui";
-
-<Button />
-
-<Callout type="warning" emoji="⚠️">
-  Cannot seem to useState inside my shared component in ui
-</Callout>
-
-### Local Counter in this `.mdx`
-
-import { useState } from "react";
-
-export function LocalCounter({ children }) {
-  const [count, setCount] = useState(0);
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      {children}
-      {count}
-    </button>
-  );
-}
-
-<LocalCounter>**Local Counter Clicks**: </LocalCounter>
-
-### Counter Button from `../components/CounterButton`
-
-import { CounterButton } from "../components/CounterButton";
-
-<CounterButton />
-
-## Markdown Tables
-
-| left   | center | right |
-| :----- | :----: | ----: |
-| foo    |  bar   |   baz |
-| banana | apple  |  kiwi |
-
-## Image
-
 import Image from "next/image";
 
-<Image
-  src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Pythagorean.svg"
-  alt="Pythagorean Theorem"
-  width={200}
-  height={200}
-/>
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+  }}
+>
+  <Image
+    alt="Turborepo Logo"
+    src={`/images/turborepo-hero-logo-light.svg`}
+    width={64}
+    height={64}
+    className="absolute w-[84px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  />
+  <Image
+    style={{ marginRight: ".5rem" }}
+    src="/images/garden-logo.svg"
+    alt="Garden-Logo"
+    width={64}
+    height={64}
+  />
+</div>
 
-## Math
+This site documents the turbo monorepo it was built from.
 
-The **Pythagorean equation**: $c=\sqrt{a^2 + b^2}$.
+The monorepo's purpose is to demonstrate the following capabilities:
+
+## Multiple Apps and Packages
+
+- [x] Nextjs site (`apps/web`)
+- [x] Shared component library
+- [x] Nextra based documentation (this site `apps/docs`)
+
+Other runtimes:
+
+- [ ] `deno` cli app
+- [ ] go cli app
+
+## Using Tailwindcss
+
+- [ ] Tailwindcss
+
+## Using Prisma
+
+## CI/CD
+
+- Deploy to vercel (2 sites)
+
+  - docs: https://turbo-garden-docs.vercel.app/
+  - web: https://turbo-garden-web.vercel.app/
+
+- [ ] Github Actions (lint, test build, docker)
+- [ ] e2e - cypress &| storybook &| [playwright](https://www.youtube.com/watch?v=bsE1VJn1HeU)
+- [ ] Dockerize the two sites (using `turbo prune`, with-docker example)
+- [ ] `npx turbo link`: for [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [ ] Deploy to netlify (2 sites)
+
+## Setup
+
+This repos was created with the following command:
+
+```sh
+npx create-turbo@latest
+```
+
+As generated this Turborepo includes the following packages/apps:
+
+### Apps and Packages
+
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
